@@ -1,0 +1,10 @@
+https://colab.research.google.com/drive/15j2HIag9TNsvubmseNl4aGtcXyVmmbBa?usp=sharing
+
+
+This is Q4. I was not able to import data properly.This code is only for detection of circles
+I am stating my idea here-
+I would segment the video frame wise and obtain photos of different instances.
+Then detect the circles and their centers.
+Since between 2 frames the dot would not have moved much, so i would detect dot its neighbourhood only, in the next frame to get the distance by which the circle has moved.
+The take 2 such consecutive instance to find velocity. And then similariy take another 2 consecutuive to find its next velocity and then find accleration. Do a the same process again to get consecutive accleration.
+Now assuming jerk to be constant i would get rate of chnage of acceleration, now i can predict velocity and position .
