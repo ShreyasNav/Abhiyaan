@@ -1,0 +1,36 @@
+<root main_tree_to_execute = "MainTree" >
+    <BehaviorTree ID="MainTree">
+        <Sequence name="root_sequence">
+            <Fallback name="ball_aquicition">
+                <HoldingTheBall name="holding_the_ball">
+                <Fallback name="if_ball_not_with_us">
+                    <Sequence name="ball_with_opp_case">
+                        <DoesOppHaveBall name="does_opp_have_ball">
+                        <DefenceIfOppHaveBall name="defence_if_opp_have_ball">
+                    </Sequence>
+                    <DoesOurTeamHasBall name="does_our_team_has_ball">
+                    <Sequence name="ball_with_none">
+                        <FindBall name="Find_ball">
+                        <Sequence name="approach_ball_and_take_position">
+                            <ApproachBall name="approach_ball">
+                            <TakePosition name="take_position">
+                        </Sequence>
+                    </Sequence>
+                </Fallback>
+            </Fallback> 
+            <Fallback name="Passing">
+                <NearGoal name="near_goal">
+                <Sequence name="not_near_goal">
+                    <PossibleToPass name="possible_to_pass">
+                    <PassToBest name="pass_to_best">
+                </Sequence>
+                <KickToNone name="kick_to_none">
+            </Fallback>
+            <Fallback name="check_goal">
+                <GoalClear name="goal_clear">
+                <PassWithLeastRisk name="pass_with_least_risk">
+            </Fallback>
+            <GoalUsingDiffTechniques name="goal_using_diff_techniques">
+        </Sequences>
+    </BehaviorTree>
+</root>
